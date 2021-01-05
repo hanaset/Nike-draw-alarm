@@ -1,5 +1,0 @@
-2021-01-05 21:23:06.477 INFO [           main] [c.h.d.a.DiscordApiApplicationKt] logStarting (55): Starting DiscordApiApplicationKt on Jeongbinui-MacBookPro.local with PID 4215 (/Users/luke/workspace/Hana-Discord/discord-api/build/classes/kotlin/main started by luke in /Users/luke/workspace/Hana-Discord)
-2021-01-05 21:23:06.479 INFO [           main] [c.h.d.a.DiscordApiApplicationKt] logStartupProfileInfo (655): The following profiles are active: production
-2021-01-05 21:23:12.194 INFO [           main] [c.h.d.a.s.DiscordBotService] accept (42): Logging in as Hana Bot 5692
-2021-01-05 21:23:12.604 INFO [           main] [c.h.d.a.DiscordApiApplicationKt] logStarted (61): Started DiscordApiApplicationKt in 6.589 seconds (JVM running for 7.389)
-2021-01-05 21:23:12.608 INFO [           main] [c.h.d.a.DiscordApiApplication] onApplicationEvent (38): discord-api applicationReady, profiles = [production]

@@ -1,0 +1,2 @@
+2021-01-05 21:50:30.694 INFO [    Test worker] [c.h.d.a.DiscordApiApplicationTests] logStarting (55): Starting DiscordApiApplicationTests on Jeongbinui-MacBookPro.local with PID 4987 (started by luke in /Users/luke/workspace/Nike-draw-alarm/discord-api)
+2021-01-05 21:50:30.695 INFO [    Test worker] [c.h.d.a.DiscordApiApplicationTests] logStartupProfileInfo (655): The following profiles are active: production
