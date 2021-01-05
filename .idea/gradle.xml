@@ -9,9 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/dobi-api" />
-            <option value="$PROJECT_DIR$/dobi-common" />
-            <option value="$PROJECT_DIR$/dobi-runner" />
+            <option value="$PROJECT_DIR$/discord-api" />
+            <option value="$PROJECT_DIR$/discord-common" />
           </set>
         </option>
       </GradleProjectSettings>

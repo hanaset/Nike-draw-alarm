@@ -1,0 +1,11 @@
+server:
+  port: 5000
+
+discord:
+  token: Nzk1Mzg4NjI1MzMyMjA3NjM2.X_IpYQ.56VShNEcV1JYf3JN43QdmcGPE80
+
+spring:
+  profiles:
+    active: production
+  pid:
+    file: logs/discord-api.pid

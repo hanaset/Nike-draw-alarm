@@ -1,2 +1,2 @@
-rootProject.name = "dobi"
-include("dobi-common", "dobi-api", "dobi-runner")
+rootProject.name = "discord"
+include("discord-common", "discord-api")

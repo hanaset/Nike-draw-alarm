@@ -1,5 +1,2 @@
-# Nike Draw Alarm
-
-### Spring boot + Security + Jwt + Kakao Social Login
-
-코틀린, 스프링 부트, 시큐리티, Jwt Token을 이용한 카카오 소셜 로그인 구현
+# Hana-Discord
+하나셋이 만든 디스코드 봇 (일정관리 기능)

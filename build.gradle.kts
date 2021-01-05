@@ -3,9 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath( "org.jetbrains.kotlin:kotlin-noarg:1.3.71")
+        classpath( "org.jetbrains.kotlin:kotlin-compiler-embeddable:1.3.71")
     }
 }
 
@@ -19,7 +21,7 @@ plugins {
 
 allprojects {
 
-    group = "com.rufee.dobi"
+    group = "com.hanaset.discord"
     version = "staging"
 
     tasks.withType<JavaCompile> {
@@ -42,6 +44,7 @@ allprojects {
 subprojects {
     repositories {
         mavenCentral()
+        jcenter()
     }
 
     apply {
