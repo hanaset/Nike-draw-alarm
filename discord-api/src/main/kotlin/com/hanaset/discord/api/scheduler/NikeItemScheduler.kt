@@ -18,9 +18,14 @@ class NikeItemScheduler(
     }
 
     // 10분에 한번씩
-//    @Scheduled(cron = "0 */10 * * * *", zone = "Asia/Seoul")
-    @Scheduled(cron = "* * * * * *", zone = "Asia/Seoul")
+    @Scheduled(cron = "0 */10 * * * *", zone = "Asia/Seoul")
+//    @Scheduled(cron = "* * * * * *", zone = "Asia/Seoul")
     fun nike10MBeforeAlarm() {
         nikeItemAlarmService.event10MBeforeAlarm()
+    }
+
+    @Scheduled(cron = "30 */10 * * * *", zone = "Asia/Seoul")
+    fun nikeApplyAlarm() {
+        nikeItemAlarmService.eventApplyAlarm()
     }
 }

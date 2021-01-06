@@ -2,6 +2,6 @@ package com.hanaset.discord.common.entity.enums
 
 enum class AlarmStatus {
     BEFORE,
-    SEND_START,
-    SEND_COMPLETE
+    EVENT_10M_BEFORE,
+    APPLYING
 }

@@ -16,6 +16,17 @@ class NikeItemAlarmService(
         private val discordChannelRepository: DiscordChannelRepository
 ) {
 
+    fun eventApplyAlarm() {
+        val discordChannelIds = discordChannelRepository.findAll()
+        val nikeItems = nikeItemRepository.findByApplyDateBeforeAndStatusAndAlarmStatus(LocalDateTime.now(), NikeItemStatus.APPLYING, AlarmStatus.EVENT_10M_BEFORE)
+        nikeItems.map { makeMessage(it) }.forEach { message ->
+            discordChannelIds.forEach { discordBotService.sendMessage(it.channelId, message) }
+        }
+
+        nikeItems.forEach { it.alarmStatus = AlarmStatus.APPLYING }
+        nikeItemRepository.saveAll(nikeItems)
+    }
+
     fun event10MBeforeAlarm() {
 
         val discordChannelIds = discordChannelRepository.findAll()
@@ -23,19 +34,18 @@ class NikeItemAlarmService(
         val before10M = LocalDateTime.now().plusMinutes(10)
         val nikeItems = nikeItemRepository.findByApplyDateBeforeAndStatusAndAlarmStatus(before10M, NikeItemStatus.COMING_SOON, AlarmStatus.BEFORE)
 
-        nikeItems.forEach { it.alarmStatus = AlarmStatus.SEND_START }
-        nikeItemRepository.saveAll(nikeItems)
-
         nikeItems.map { makeMessage(it) }.forEach { message ->
             discordChannelIds.forEach { discordBotService.sendMessage(it.channelId, message) }
         }
 
-        nikeItems.forEach { it.alarmStatus = AlarmStatus.SEND_COMPLETE }
+        nikeItems.forEach { it.alarmStatus = AlarmStatus.EVENT_10M_BEFORE }
         nikeItemRepository.saveAll(nikeItems)
     }
 
     fun makeMessage(nikeItemEntity: NikeItemEntity): String {
         return """
+            **나이키 스니커즈 드로우 이벤트가 곧 시작됩니다.**
+            
             * 상품명 : ${nikeItemEntity.name}
             * 접수시간 : ${nikeItemEntity.applyDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))}
             * url : ${nikeItemEntity.url}
