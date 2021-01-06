@@ -44,7 +44,7 @@ class DiscordBotService(
 
         discordClient.eventDispatcher.on(MessageCreateEvent::class.java)
                 .subscribe {
-                    logger.info("GuildId: ${it.guildId.get()}, member: ${it.member.get()}, channelId: ${it.message.channelId}, user: ${it.message.author.get()}")
+//                    logger.info("GuildId: ${it.guildId.get()}, member: ${it.member.get()}, channelId: ${it.message.channelId}, user: ${it.message.author.get()}")
 
                     val content = it.message.content
 
@@ -59,8 +59,8 @@ class DiscordBotService(
 
         discordClient.eventDispatcher.on(GuildCreateEvent::class.java)
                 .subscribe { event ->
-                    val channelId = event.guild.systemChannelId.get().asLong()
-                    discordChannelRepository.save(DiscordChannelEntity(channelId = channelId))
+//                    val channelId = event.guild.systemChannelId.get().asLong()
+//                    discordChannelRepository.save(DiscordChannelEntity(channelId = channelId))
                 }
     }
 

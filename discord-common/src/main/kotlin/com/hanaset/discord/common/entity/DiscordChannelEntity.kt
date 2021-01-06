@@ -7,5 +7,8 @@ import javax.persistence.*
 class DiscordChannelEntity(
         @Id
         @Column(name = "channel_id")
-        val channelId: Long
+        val channelId: Long,
+
+        @Column(name = "user_id")
+        val userId: Long
 ): AbstractBaseAuditEntity()

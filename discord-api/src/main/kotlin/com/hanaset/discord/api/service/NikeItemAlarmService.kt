@@ -16,6 +16,11 @@ class NikeItemAlarmService(
         private val discordChannelRepository: DiscordChannelRepository
 ) {
 
+    fun getComingSoonItem(): List<NikeItemEntity> {
+
+        return nikeItemRepository.findByStatus(NikeItemStatus.COMING_SOON)
+    }
+
     fun eventApplyAlarm() {
         val discordChannelIds = discordChannelRepository.findAll()
         val nikeItems = nikeItemRepository.findByApplyDateBeforeAndStatusAndAlarmStatus(LocalDateTime.now(), NikeItemStatus.APPLYING, AlarmStatus.EVENT_10M_BEFORE)

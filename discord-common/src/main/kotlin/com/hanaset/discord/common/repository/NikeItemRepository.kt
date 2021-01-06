@@ -12,4 +12,5 @@ interface NikeItemRepository: JpaRepository<NikeItemEntity, Long> {
 
     fun existsByUrlAndStatus(url: String, status: NikeItemStatus): Boolean
     fun findByApplyDateBeforeAndStatusAndAlarmStatus(applyDate: LocalDateTime, status: NikeItemStatus, alarmStatus: AlarmStatus): List<NikeItemEntity>
+    fun findByStatus(status: NikeItemStatus): List<NikeItemEntity>
 }
